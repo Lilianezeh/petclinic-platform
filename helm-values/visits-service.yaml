@@ -1,9 +1,0 @@
-image:
-  repository: 304896961232.dkr.ecr.eu-central-1.amazonaws.com/petclinic-dev-visits-service
-  tag: "latest"
-containerPort: 8082
-service:
-  type: ClusterIP
-  port: 8082
-namespace: petclinic-dev
-waitForConfigServer: true
