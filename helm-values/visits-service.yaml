@@ -6,3 +6,4 @@ service:
   type: ClusterIP
   port: 8082
 namespace: petclinic-dev
+waitForConfigServer: true

@@ -6,3 +6,4 @@ service:
   type: LoadBalancer
   port: 8080
 namespace: petclinic-dev
+waitForConfigServer: true
