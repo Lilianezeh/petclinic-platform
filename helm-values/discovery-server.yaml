@@ -1,11 +1,8 @@
 image:
   repository: 304896961232.dkr.ecr.eu-central-1.amazonaws.com/petclinic-dev-discovery-server
   tag: "latest"
-
-containerPort: 
-
+containerPort: 8761
 service:
   type: ClusterIP
-  port: 
-
+  port: 8761
 namespace: petclinic-dev
