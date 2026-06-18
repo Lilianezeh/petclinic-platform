@@ -20,6 +20,6 @@ module "eks" {
   subnet_ids    = module.vpc.public_subnet_ids
   instance_type = "t3.small"
   desired_nodes = 3
-  min_nodes     = 2
-  max_nodes     = 4
+  min_nodes     = 3
+  max_nodes     = 3
 }
