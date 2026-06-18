@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: petclinic-dev-customers-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Lilianezeh/petclinic-platform.git
+    targetRevision: main
+    path: helm/petclinic-service
+    helm:
+      valueFiles:
+        - ../../helm-values/customers-service.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: petclinic-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

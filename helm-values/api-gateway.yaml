@@ -1,0 +1,11 @@
+image:
+  repository: 304896961232.dkr.ecr.eu-central-1.amazonaws.com/petclinic-dev-api-gateway
+  tag: "latest"
+
+containerPort: 
+
+service:
+  type: ClusterIP
+  port: 
+
+namespace: petclinic-dev
