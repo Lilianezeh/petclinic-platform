@@ -37,6 +37,9 @@ spec:
               value: "http://petclinic-dev-config-server.petclinic-dev.svc.cluster.local:8888"
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
               value: "http://petclinic-dev-discovery-server.petclinic-dev.svc.cluster.local:8761/eureka/"
+            {{- if .Values.extraEnv }}
+            {{- toYaml .Values.extraEnv | nindent 12 }}
+            {{- end }}
           resources:
             requests:
               memory: {{ .Values.resources.requests.memory }}
