@@ -11,12 +11,12 @@ service:
 
 containerPort: 8080
 
-env: dev
+namespace: petclinic-dev
 
 resources:
   requests:
-    memory: "256Mi"
-    cpu: "100m"
+    memory: "128Mi"
+    cpu: "50m"
   limits:
     memory: "512Mi"
     cpu: "500m"
@@ -25,16 +25,16 @@ livenessProbe:
   httpGet:
     path: /actuator/health
     port: 8080
-  initialDelaySeconds: 60
+  initialDelaySeconds: 120
   periodSeconds: 30
-  timeoutSeconds: 5
-  failureThreshold: 3
+  timeoutSeconds: 10
+  failureThreshold: 5
 
 readinessProbe:
   httpGet:
     path: /actuator/health
     port: 8080
-  initialDelaySeconds: 30
+  initialDelaySeconds: 90
   periodSeconds: 10
-  timeoutSeconds: 3
-  failureThreshold: 3
+  timeoutSeconds: 5
+  failureThreshold: 5
